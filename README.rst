@@ -1,4 +1,4 @@
-Live Building Sysem
+FLask - Live Building Sysem
 ======
 
 Goal: Spin up a basic Flask application, connect it to a local SQLite database, add fake meter
@@ -10,8 +10,8 @@ Install
 -------
 
     # clone the repository
-    $ git clone https://github.com/***user***/lbs
-    $ cd lbs
+    $ git clone https://github.com/unbrekablery/live-building-system
+    $ cd live-building-system
     
 Create a virtualenv and activate it::
 
