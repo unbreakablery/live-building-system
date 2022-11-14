@@ -1,4 +1,4 @@
-FLask - Live Building Sysem
+FLask - Live Building System
 ======
 
 Goal: Spin up a basic Flask application, connect it to a local SQLite database, add fake meter
