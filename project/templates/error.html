@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3><strong>{% block title %} Sorry, you are getting error {% endblock %}</strong></h3>
+    <p class="text-danger">
+        {{ error_message }}
+    </p>
+    <button type="button" class="btn btn-secondary" onClick="javascript:window.history.go(-1)">Back</butotn>
+{% endblock %}

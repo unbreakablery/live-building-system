@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Live Building Systems {% endblock %}
+{% block content %}
+    <h2>Meters</h2>
+    <hr>
+    {% if meters %}
+    <ul class="list-unstyled">
+    {% for meter in meters %}
+        <li>
+            <a href="{{ url_for('meters', meter_id=meter['id']) }}">
+                <h2>{{ meter['label'] }}</h2>
+            </a>
+            <hr>
+        </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-danger"><strong>Sorry, No Meters</strong></p>
+    {% endif %}
+{% endblock %}

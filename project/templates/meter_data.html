@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Live Building Systems {% endblock %}
+{% block content %}
+    <h2>Meter Data Detail</h2>
+    <hr>
+    {% if meter_data and meter_data.id %}
+    <ul class="list-unstyled">
+        <li>ID: <span class="text-success"><strong>{{ meter_data.id }}</strong></span></li>
+        <li>Label: <span class="text-primary"><strong>{{ meter_data.label }}</strong></span></li>
+        <li>Data: <span class="text-info"><strong>{{ meter_data.data|length }}</strong></span></li>
+    </ul>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">TimeStamp</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% if meter_data.data and meter_data.data|length > 0 %}
+            {% for data in meter_data.data %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>
+                    <span class="badge badge-primary">{{ data.timestamp }}</span>
+                </td>
+                <td>{{ data.value }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3" class="text-center text-danger">No Data</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="text-danger"><strong>Sorry, No Meter</strong></p>
+    {% endif %}
+{% endblock %}

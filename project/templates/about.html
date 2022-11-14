@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} About Live Building Systems {% endblock %}</h2>
+    <hr>
+    <h3 class"mt-4">
+        <strong>Goal</strong>
+    </h3>
+    <p>
+        Spin up a basic Flask application, connect it to a local SQLite database, add fake meter
+        data to the db, then implement a RESTful application for displaying the fake meter data in .json
+        format.
+    </p>
+
+    <h4 class"mt-4">
+        <strong>The application should be able to respond to the following queries:</strong>
+    </h4>
+    <ul>
+        <li>
+            Endpoint: /meters/
+            <p>
+                Should display a list of the unique meters in the DB. Each one should be a clickable link
+                that then points to the meter’s .json page that displays all of it’s associate data. So if I click on
+                the “Meter X” link it should point to the /meters/x/ url/endpoint.
+            </p>
+        </li>
+        <li>
+            Endpoint: /meters/{METER_ID}
+            <p>
+                Should display a list sorted by timestamp of all the datapoint entries from the meter_data 
+                in json format for the specific meter_id passed into the URL as a parameter.
+            </p>
+        </li>
+    </ul>
+{% endblock %}
