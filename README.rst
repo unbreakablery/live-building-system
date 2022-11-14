@@ -9,10 +9,11 @@ format.
 Install
 -------
 
-    # clone the repository
+Clone the repository::
+
     $ git clone https://github.com/unbrekablery/live-building-system
     $ cd live-building-system
-    
+
 Create a virtualenv and activate it::
 
     $ python3 -m venv venv
